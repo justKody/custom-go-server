@@ -42,6 +42,8 @@ func (s *Server) acceptLoop() {
 			continue
 		}
 
+		fmt.Println("new connection to the server: ", conn.RemoteAddr())
+
 		go s.readLoop(conn)
 	}
 }
